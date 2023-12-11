@@ -3,6 +3,7 @@ package Prints;
 import java.util.Objects;
 
 public class Prints {
+	// print Queue
 
 	private String printName;
 	private int printPosition;
@@ -31,6 +32,16 @@ public class Prints {
 	}
 		// dequeue
 	public void dequeue() {
+		printName = null;
+		printPosition = 0;
+	}
+	//peak
+	public String peak() {
+		return printName;
+	}
+
+	// clear
+	public void clear() {
 		printName = null;
 		printPosition = 0;
 	}
