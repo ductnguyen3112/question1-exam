@@ -5,19 +5,18 @@ import java.util.Objects;
 public class Prints {
 	// print Queue
 
-	private String printName;
+	private String[] printName;
 	private int printPosition;
 
-
-
-	public String getPrintName() {
-		return printName;
+	public Prints(String[] printName, int printPosition) {
+		this.printName = printName;
+		this.printPosition = printPosition;
 	}
 
 	public void setPrintName(String printName) {
 		this.printName = printName;
 	}
-	
+
 	public int getPrintPosition() {
 		return printPosition;
 	}
@@ -26,16 +25,36 @@ public class Prints {
 		this.printPosition = printPosition;
 	}
 
-	///is queue empty
-	public boolean isEmpty() {
-		return printName == null;
+	// check the queue
+	public void printQueue() {
+		if (printName == null) {
+			System.out.println("Queue is empty");
+		} else {
+			System.out.println("Queue is not empty");
+		}
 	}
-		// dequeue
-	public void dequeue() {
-		printName = null;
-		printPosition = 0;
+
+	public void isEmpty() {
+		if (printName == null) {
+			System.out.println("Queue is empty");
+		} else {
+			System.out.println("Queue is not empty");
+		}
 	}
-	//peak
+
+	public String dequeue() {
+		if (printName == null) {
+			System.out.println("Queue is empty");
+			return null;
+		} else {
+			String name = printName[printPosition];
+			printName[printPosition] = null;
+			printPosition--;
+			return name;
+		}
+	}
+
+
 	public String peak() {
 		return printName;
 	}
@@ -46,15 +65,4 @@ public class Prints {
 		printPosition = 0;
 	}
 
-
-
-
-
-	
-
-
-
-
-	
-	
 }
